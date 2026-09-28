@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# ignored folders
+weights/
+saved_vars/
+configs/
+logs/
+plots/
+samples/**/
+
+
+# Do not ignore certain files in subfolders
+!data/*.py
+#!data/*.mdp
+
+analysis/**/
+!analysis/*.py
+
+# Shell scripts
+*.sh
+
+*.xvg
+*.pdf
+*.pdb
+
+#DS_Store
+.DS_Store
+
+# pycharm
+.idea/

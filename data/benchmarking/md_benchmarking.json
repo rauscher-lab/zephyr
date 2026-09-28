@@ -1,0 +1,12 @@
+{
+    "md_benchmarking": {
+        "nup98_12": 1962.368,
+        "nup98_24": 614.082,
+        "CLN": 2117.090,
+        "RS": 1062.156,
+        "AAQ": 1125.517
+    },
+    "README": {
+        "md_benchmarking": "Benchmarking rates for each system in ns/day on local workstation."
+    }
+}

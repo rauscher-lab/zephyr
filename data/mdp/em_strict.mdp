@@ -1,0 +1,35 @@
+; minim.mdp - used as input into grompp to generate em.tpr
+; Parameters describing what to do, when to stop and what to save
+integrator  = steep         ; Algorithm (steep = steepest descent minimization)
+; integrator  = l-bfgs
+emtol       = 200.0          ; Stop minimization when the maximum force < 1000.0 kJ/mol/nm (update 10)
+emstep      = 0.01          ; Minimization step size
+nsteps      = 50000         ; Maximum number of (minimization) steps to perform
+
+; Parameters describing how to find the neighbors of each atom and how to calculate the interactions
+nstlist         = 10        ; Frequency to update the neighbor list and long range forces
+cutoff-scheme   = Verlet    ; Buffered neighbor searching
+;ns_type         = grid      ; Method to determine neighbor list (simple, grid)
+coulombtype     = PME       ; Treatment of long range electrostatic interactions
+rcoulomb        = 0.95       ; Short-range electrostatic cut-off
+rvdw            = 0.95      ; Short-range Van der Waals cut-off
+pbc             = xyz       ; Periodic Boundary Conditions in all 3 dimensions
+
+; Added parameters, these are all default just listing explicitly
+comm_mode           =  none
+nstcomm             =  100
+fourierspacing      =  0.12
+pme_order           =  4
+vdwtype             =  cut-off 
+rlist               =  0.95 ;Cut-off distance for the short-range neighbor list
+DispCorr            =  no ; Apply long range dispersion corrections for Energy and Pressure
+constraints         =  none 
+periodic_molecules  =  no
+
+; Added section to specify how often files are saved
+nstxout             =  0 ; steps between writing coordinates to trr. 0 means never
+nstvout             =  0 ; steps between writing velocities to trr. 0 means never
+nstfout             =  0 ; steps between writing forces to trr. 0 means never
+nstlog              =  2500 ; steps between writing energies to log
+nstenergy           =  500 ; Steps that elapse between writing energies to energy file
+nstxout-compressed  =  500 ; steps that elapse between writing position coordinates to xtc

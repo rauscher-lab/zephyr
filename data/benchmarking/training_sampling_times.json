@@ -1,0 +1,36 @@
+{
+    "training_CS": {
+        "nup98_12": 2.202042210433218,
+        "nup98_24": 3.5501547709438537,
+        "CLN": 3.481018419795566,
+        "RS": 3.533148372835583,
+        "AAQ": 1.7528737276792525
+    },
+    "training_HA": {
+        "nup98_12": 3.1186197206046846,
+        "nup98_24": 4.409830005897416,
+        "CLN": 8.293005921575759,
+        "RS": 7.3368843890561,
+        "AAQ": 2.7931118763155407
+    },
+    "sampling_CS+HA_per_sample": {
+        "nup98_12": 9.775159954252929e-05,
+        "nup98_24": 0.00025644643732579425,
+        "CLN": 0.00017346087835768534,
+        "RS": 0.0003586779771153642,
+        "AAQ": 0.0001291315294715093
+    },
+    "sampling_CS+HA_h_per_10ksample": {
+        "nup98_12": 0.978,
+        "nup98_24": 2.564,
+        "CLN": 1.735,
+        "RS": 3.587,
+        "AAQ": 1.291
+    },
+    "README": {
+        "training_CS": "Training time (h) of the coarse-grain model for each system",
+        "training_HA": "Training time (h) of the heavy-atom model for each system",
+        "sampling_CS+HA_per_sample": "Sampling time (h) of coarse grains and heavy atoms per sample for each system. The time is calculated by averaging the total time needed to sample 10000 samples.",
+        "sampling_CS+HA_h_per_10ksample": "Sampling time (h) per 10k samples."
+    }
+}
