@@ -4,14 +4,12 @@ A generative diffusion model for sampling disordered protein structures trained 
 
 ## Introduction
 
-This codebase provides workflows to train a generative graph neural network (GNN) for the task of sampling the
-conformations of disordered proteins.
+This codebase provides workflows to train a generative graph neural network (GNN) for the task of sampling conformations of disordered proteins.
 The generative model consists of 2 separate networks: 1) A GNN to sample coarse-grained protein structures and 2)
 another GNN to sample heavy atom positions with a given coarse-grained structure.
-The coarse-grained structure consists of the alpha carbon (CA) and a sidechain atom of each residue found in the
-sequence.
-The models are trained on structures gathered from molecular dynamics (MD) trajectories.
-Each model is trained on trajectories of a single protein sequence.
+The coarse-grained structure consists of a backbone bead (centered on the the alpha-carbon atom) and a sidechain bead for each residue in the sequence.
+The models are trained on structures from molecular dynamics (MD) trajectories.
+Each model is trained on MD trajectories of a single protein sequence.
 
 ## Installation
 ### Option 1: Install packages with pip
@@ -38,7 +36,7 @@ conda install -c nvidia -c pytorch pytorch pytorch-cuda torchvision --force-rein
 The default values can be overwritten by modifying the config variables in `config.py` or by defining
 a `config_defaults.py` located in the `configs` subdirectory.
 Configuration values for training and sampling with specific models must be stored in the `./configs` directory.
-Since configurations are `.py` file, one can import modules and use complex logic to define the configuration variables.
+Since configurations are `.py` files, one can import modules and use complex logic to define the configuration variables.
 However, at the end of the config file, one must delete all temporary variables to make sure that the module namespace
 contains only variables that are defined as configuration.
 
@@ -55,19 +53,19 @@ These configuration files were used to train models and sample datasets analyzed
 
 Three kinds of datasets are associated with the codebase: MD, processed and generated datasets.
 The datasets are stored on [Zenodo](https://zenodo.org/records/20492056).
-Functions in `data.download` downloads a dataset as it is needed.
+Functions in `data.download` download a dataset as it is needed.
 Alternatively, one can download the dataset `.zip` files and extract them in a given directory.
 The config variables `MD_datasets_dir`, `proc_datasets_dir` and `gen_datasets_dir` specify the directories where the MD,
 processed and generated datasets are stored, respectively.
-Once datasets are downloaded, use the function `load_dataset(name)` in `data/datasets.py` to a dataset named `name`.
-The name of a dataset corresponds to the name of its directory.
+Once datasets are downloaded, use the function `load_dataset(name)` in `data/datasets.py` to load a dataset named `name`.
+The name of a dataset matches the name of its directory.
 For example, `load_dataset('nup98_12')` will load data from the processed dataset directory `nup98_12` located in the
 directory defined by `config.proc_datasets_dir`.
 
 ## Weights
 
 Model weights are stored on [Zenodo](https://zenodo.org/records/20492056) in the `model_weights.zip` file.
-When specific model weights are needed for retraining or sampling, they will be fetched from the repository.
+When specific model weights are needed for retraining or sampling, they are fetched from the repository.
 Alternatively, one can download all model weights and store them in the directory defined by `config.weights_dir`.
 
 ## Training
@@ -97,7 +95,7 @@ See `run_all.sh` for a summary of all training runs associated with the publicat
 
 ## Sampling
 
-Sampling with a given model is achieved with the `models.generate` module. For example,
+Sampling with a given model is carried out with the `models.generate` module. For example,
 
 ```
 python -m models.generate --ID_coarse C1 --ID_fine H1 --dataset nup98_12 --configs_coarse config_CS1.py --configs_fine config_HA1.py
@@ -105,18 +103,16 @@ python -m models.generate --ID_coarse C1 --ID_fine H1 --dataset nup98_12 --confi
 
 will generate structures with the same topology as the `nup98_12` dataset using `config_CS1.py` for the coarse-structure
 model configurations and `config_HA1.py` for the fine-structure model configurations.
-The ID of the coarse-structure sampling is `C1` and he ID of the fine-structure sampling is `H1`.
+The ID of the coarse-structure sampling is `C1` and the ID of the fine-structure sampling is `H1`.
 The dataset of generated structures will be stored in the directory defined by `config.gen_datasets_dir`.
 
 See `run_all.sh` for a summary of all sampling runs associated with the publication.
 
 ### Denoising Trajectories
 
-Examples of denoising trajectories for sampling the coarse structure and fine structure of the `nup98_12` sequence are
-shown.
+Examples of denoising trajectories for sampling the coarse structure and fine structure of the `nup98_12` sequence are shown.
 
-<img width="400" height="411" alt="Image" src="https://github.com/user-attachments/assets/aa96028a-1b35-47fc-84c3-35c4c440f18b" />
-<img width="400" height="450" alt="Image" src="https://github.com/user-attachments/assets/466e306c-372a-45bf-8c7b-2a06ae02e94c" />
+<img width="400" height="450" alt="Image" src="https://github.com/user-attachments/assets/d8cc397a-ffa6-4b90-9a5e-239e9b1bad8f" />
 
 ## Analysis
 
@@ -126,5 +122,6 @@ See `./analysis/analysis_tutorial.py` for an example of various ways to compare 
 
 Modules in the `figures` directory contain plotting functions to re-create the figures of the associated publication.
 
-## Reference
-TODO:Add reference to publication
+## References
+
+Olivier Trottier, Jack H. Gwozdecky and Sarah Rauscher (2026) "Generating Structural Ensembles of Disordered Proteins with Diffusion Models" bioRxiv.
