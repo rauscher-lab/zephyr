@@ -1,7 +1,7 @@
 eval "$(command conda 'shell.bash' 'hook' 2> /dev/null)"
 
 # Activate conda environment
-conda activate myenv
+conda activate zephyr
 
 # Train models on main datasets
 #  python train.py --configs config_CS1.py --dataset nup98_12 --dataset_split_set_ID 1
