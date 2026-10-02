@@ -1,4 +1,4 @@
-name: protnet
+name: zephyr
 channels:
   - pytorch
   - conda-forge
