@@ -12,4 +12,3 @@ scipy==1.11.3
 torch==2.8.0
 tqdm==4.66.1
 umap_learn==0.5.7
-wandb
