@@ -1,4 +1,4 @@
-matplotlib==3.8.1
+matplotlib==3.8.4
 mdanalysis==2.9.0
 networkx==3.5
 numpy==1.26.4
