@@ -7,7 +7,7 @@ A generative diffusion model for sampling disordered protein structures trained 
 This codebase provides workflows to train a generative graph neural network (GNN) for the task of sampling conformations of disordered proteins.
 The generative model consists of 2 separate networks: 1) A GNN to sample coarse-grained protein structures and 2)
 another GNN to sample heavy atom positions with a given coarse-grained structure.
-The coarse-grained structure consists of a backbone bead (centered on the the alpha-carbon atom) and a sidechain bead for each residue in the sequence.
+The coarse-grained structure consists of a backbone bead (centered on the alpha-carbon atom) and a sidechain bead for each residue in the sequence.
 The models are trained on structures from molecular dynamics (MD) trajectories.
 Each model is trained on MD trajectories of a single protein sequence.
 
@@ -21,7 +21,7 @@ pip install -r requirements.txt
 ```
 
 ### Option 2: Install environment with conda
-Create a CONDA environment using the `.yml` file:
+Create a conda environment using the `.yml` file:
 ```
 conda env create -f requirements.yml
 ```
@@ -40,7 +40,7 @@ Since configurations are `.py` files, one can import modules and use complex log
 However, at the end of the config file, one must delete all temporary variables to make sure that the module namespace
 contains only variables that are defined as configuration.
 
-4 configuration files are included in the repository:
+Four configuration files are included in the repository:
 
 * `config_CS1.py`: configuration of the coarse-structure model
 * `config_CS1_NoCP.py`: configuration of the coarse-structure model that doesn't have cross-product modules.
@@ -120,7 +120,7 @@ See `./analysis/analysis_tutorial.py` for an example of various ways to compare 
 
 ## Figures
 
-Modules in the `figures` directory contain plotting functions to re-create the figures of the associated publication.
+Modules in the `figures` directory contain plotting functions to recreate the figures of the associated publication.
 
 ## References
 
