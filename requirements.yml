@@ -19,6 +19,5 @@ dependencies:
   - scipy=1.11.3
   - tqdm=4.66.1
   - umap-learn=0.5.7
-  - wandb
   - pip:
       - schedulefree==1.2.6
