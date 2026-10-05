@@ -49,6 +49,8 @@ Four configuration files are included in the repository:
 
 These configuration files were used to train models and sample datasets analyzed in the associated publication.
 
+To train without wandb logging, set `wandb = False` in your config file.
+
 ## Datasets
 
 Three kinds of datasets are associated with the codebase: MD, processed and generated datasets.
@@ -65,7 +67,7 @@ directory defined by `config.proc_datasets_dir`.
 ## Weights
 
 Model weights are stored on [Zenodo](https://zenodo.org/records/20492056) in the `model_weights.zip` file.
-When specific model weights are needed for retraining or sampling, they are fetched from the repository.
+When specific model weights are needed for retraining or sampling, they are fetched from the Zenodo repository.
 Alternatively, one can download all model weights and store them in the directory defined by `config.weights_dir`.
 
 ## Training
@@ -121,6 +123,10 @@ See `./analysis/analysis_tutorial.py` for an example of various ways to compare 
 ## Figures
 
 Modules in the `figures` directory contain plotting functions to recreate the figures of the associated publication.
+
+## License
+
+This project is licensed under the MIT License — see the license file for details.
 
 ## References
 
