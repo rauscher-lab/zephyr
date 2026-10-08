@@ -17,7 +17,7 @@ from tqdm import tqdm
 
 import config
 
-ZENODO_RECORD_ID = '20492056'
+ZENODO_RECORD_ID = '23177444'
 ZENODO_URL = "https://zenodo.org"
 
 # Optional share token, only needed while the record is a draft.
