@@ -54,7 +54,7 @@ To train without wandb logging, set `wandb = False` in your config file.
 ## Datasets
 
 Three kinds of datasets are associated with the codebase: MD, processed and generated datasets.
-The datasets are stored on [Zenodo](https://zenodo.org/records/20492056).
+The datasets are stored on [Zenodo](https://zenodo.org/records/23177444).
 Functions in `data.download` download a dataset as it is needed.
 Alternatively, one can download the dataset `.zip` files and extract them in a given directory.
 The config variables `MD_datasets_dir`, `proc_datasets_dir` and `gen_datasets_dir` specify the directories where the MD,
@@ -66,7 +66,7 @@ directory defined by `config.proc_datasets_dir`.
 
 ## Weights
 
-Model weights are stored on [Zenodo](https://zenodo.org/records/20492056) in the `model_weights.zip` file.
+Model weights are stored on [Zenodo](https://zenodo.org/records/23177444) in the `model_weights.zip` file.
 When specific model weights are needed for retraining or sampling, they are fetched from the Zenodo repository.
 Alternatively, one can download all model weights and store them in the directory defined by `config.weights_dir`.
 
@@ -114,6 +114,7 @@ See `run_all.sh` for a summary of all sampling runs associated with the publicat
 
 Examples of denoising trajectories for sampling the coarse structure and fine structure of the `nup98_12` sequence are shown.
 
+<img width="400" height="411" alt="Image" src="https://github.com/user-attachments/assets/e830d665-8267-4aab-8e85-a598b8acb1ff" />
 <img width="400" height="450" alt="Image" src="https://github.com/user-attachments/assets/d8cc397a-ffa6-4b90-9a5e-239e9b1bad8f" />
 
 ## Analysis
@@ -130,4 +131,4 @@ This project is licensed under the MIT License — see the license file for deta
 
 ## References
 
-Olivier Trottier, Jack H. Gwozdecky and Sarah Rauscher (2026) "Generating Structural Ensembles of Disordered Proteins with Diffusion Models" bioRxiv.
+Olivier Trottier, Jack H. Gwozdecky and Sarah Rauscher (2026) "Generating Structural Ensembles of Disordered Proteins with Diffusion Models" [bioRxiv](https://www.biorxiv.org/content/10.64898/2026.10.02.756250v1).
